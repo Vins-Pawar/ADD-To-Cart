@@ -24,19 +24,31 @@
         <nav class="nav-bar">
             <ul>
                 <li>
-                    <a href="" class="active">Sign Up</a>
+                    <a href="/signup" class="active">Sign Up</a>
                 </li>
                 <li>
                     <a href="/login" class="active">Sign In</a>
                 </li>
                 <li>
-                    <button class="active" id="cartbutton" onclick="toggleCart()">Cart</button>
+                    <button  id="cartbutton" onclick="toggleCart()"><img src="/images/cartimg.png" alt="cart"></button>
                 </li>
             </ul>
         </nav>
     </header>
     <div id="cartItemElements">
         <div id="cartItems">  
+        </div>
+        <div class="total">
+            <table style="margin-top:30px ;">
+                <tr>
+                    <th>Total Products</th>
+                    <th>Total Price</th>
+                </tr>
+                <tr>
+                    <td id="totalProducts">0</td>
+                    <td id="totalPrice">0</td>
+                </tr>
+            </table>
         </div>
         <form action="/checkOut">
             <button id="checkoutbtn">Checkout</button>

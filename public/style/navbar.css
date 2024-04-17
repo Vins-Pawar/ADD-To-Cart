@@ -40,6 +40,9 @@ header{
 
 .nav-bar ul{
     display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .nav-bar ul li a{
@@ -51,8 +54,14 @@ header{
     /* transition: 1s; */
     transition: 0.5s;
     margin: 0 5px;
+    
 }
 
+#cartbutton img{
+    background: transparent;
+    height: 60px;
+    width: 60px;
+}
 
 .nav-bar ul li a:hover{
     color: #11101b;

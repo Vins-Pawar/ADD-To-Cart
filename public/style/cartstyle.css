@@ -37,14 +37,7 @@
 
 }
 
-.cartmenu {
-    /* position: absolute; */
-    /* display: none; */
-    height: 200px;
-    width: 100%;
-    background-color: darkgray;
-
-}
+ 
 
 #product-list {
     /* background-color: red; */
@@ -103,6 +96,11 @@ th {
     background-color: #f2f2f2;
 }
 
+table td img{
+    height: 50px;
+    width: 50px;
+    /* background: transparent; */
+}
 
 .quantity-input {
     width: 50px;
@@ -118,15 +116,16 @@ th {
 
 #checkoutbtn {
     /* z-index: 501; */
-    background-color: red;
+    background-color: rgb(157, 211, 230);
     font-size: 20px;
     padding: 10px 15px;
     margin-top: 10px;
+    margin:10px 0px 20px 50px;
 }
 #cartItemElements{
     position: absolute;
     display: none;
-    height: 300px;
+    /* height: 300px; */
     width: 100%;
     background-color: darkgray;
     z-index: 500;

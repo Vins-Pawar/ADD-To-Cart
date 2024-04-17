@@ -1,6 +1,7 @@
 const { model } = require("mongoose");
 const{validUser}=require('../middlewares/validUser');
 
+//checks user is logged in or not if user is loged in delete cart element from database else delete cart element from cookie
 async function deleteItemMiddleware(req, res, next) {
     if (validUser(req,res)) {
         next();

@@ -1,6 +1,7 @@
 const {product}=require('../models/product')
 const{validUser}=require('../middlewares/validUser');
 
+//checks user loged in or not if logeed in show all cart item from database else show cart items from cookie
 async function cartMiddleware(req, res, next) {
     if (validUser(req,res)) {
         next();

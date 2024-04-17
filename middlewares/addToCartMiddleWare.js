@@ -1,5 +1,7 @@
 const { validUser } = require('../middlewares/validUser');
 
+
+//Check user is logged in ot not if logged in store cart prodcuts in database else in cookie
 async function addToCartMiddleWare(req, res, next) {
     if (validUser(req, res)) {
         // console.log("userd is loged In");

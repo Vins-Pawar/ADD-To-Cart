@@ -47,10 +47,10 @@ function showCart() {
                 );
                 data.forEach(function (item) {
                     var row = $('<tr>').append(
-                        $('<td>').text(item.product_id).attr('id', 'productId').attr('value', item.product_id),
-                        $('<td>').text(item.product_name).attr('id', 'productName').attr('value', item.product_name),
-                        $('<td>').text(item.product_price).attr('id', 'productPrice').attr('value', item.product_price),
-                        $('<td>').append($('<img>').attr('src', item.product_image).attr('alt', item.product_name)),
+                        $('<td>').text(item.product_id).addClass('productId').attr('value', item.product_id),
+                        $('<td>').text(item.product_name).addClass('productName').attr('value', item.product_name),
+                        $('<td>').text(item.product_price).addClass('productPrice').attr('value', item.product_price),
+                        $('<td>').append($('<img>').attr('src',  '/images/'+item.product_image).attr('alt', item.product_name)),
                         $('<td>').append($('<input>').addClass('quantity-input').attr('type', 'number').attr('value', 1).attr('min', 1)),
                         $('<td>').append($('<button>').addClass('delete-button').text('Delete').click(function () {
                             deleteProduct(item.product_id);
@@ -104,10 +104,33 @@ function deleteProduct(productId) {
     // showCart();
 }
 
+function totalProducts() {
+    const productIdElements = document.getElementsByClassName('productId');
+    let totalProducts = 0;
+    let totalPrice = 0;
+
+    // Loop through each product row
+    console.log(productIdElements.length);
+    for (let i = 0; i < productIdElements.length; i++) {
+        const productId = productIdElements[i].textContent; // Get the product ID from the row
+        const productPrice = parseFloat(document.getElementsByClassName('productPrice')[i].textContent); // Get the product price from the row
+        totalProducts++; // Increment total products count
+        totalPrice += productPrice; // Add product price to total price
+    }
+
+    console.log('Total Products:', totalProducts);
+    console.log('Total Price:', totalPrice);
+}
 function toggleCart() {
     const cartSection = document.getElementById('cartItemElements');
     cartSection.style.display = cartSection.style.display === 'none' ? 'block' : 'none';
+    
+    // console.log(productId);
     if (cartSection.style.display === 'block') {
-        showCart();
+        
+            showCart(); 
+            totalProducts();
+         
+        // addEventListener("load", totalProducts);
     }
 }

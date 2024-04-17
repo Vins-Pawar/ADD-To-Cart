@@ -4,9 +4,10 @@ const render = require('ejs');
 const body = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const { type } = require('os');
-const { Session } = require('inspector');
+// const { type } = require('os');
+// const { Session } = require('inspector');
 const { connection } = require('./connect/connect')
+
 
 //schemas
 const { user } = require('./models/user')
@@ -98,16 +99,18 @@ app.post('/signup/store', async (req, res) => {
 
 app.post('/add-to-cart', addToCartMiddleWare, async (req, res) => {
     const { productId } = req.body;
+    const userId=req.session.userSessionId;
     // console.log("cookie clear ", productId);
     if (productId) {
         const item = await product.find({ product_id: productId });
         // console.log(item);
         if (item[0]) {
-            const alreadyPresent = await Cart.find({ product_id: productId });
+            const alreadyPresent = await Cart.find({ product_id: productId, user_id:userId});
             if (!alreadyPresent.toString()) {
-                const cartItem = await Cart.create({ product_id: productId, product_qunatity: 1 });
+                const cartItem = await Cart.create({ product_id: productId, user_id:userId, product_qunatity: 1 });
+                console.log("cartItem:", cartItem);
             }
-            // console.log("Product added to cart:", cartItem);
+           
         }
     }
     // console.log("cookires in middleware " + req.cookies.cart);
@@ -119,7 +122,8 @@ app.post('/add-to-cart', addToCartMiddleWare, async (req, res) => {
 
 app.get('/cart', cartMiddleware, async (req, res) => {
     try {
-        const cartItems = await Cart.find({});
+        const userId=req.session.userSessionId;
+        const cartItems = await Cart.find({user_id:userId});
         const searchResults = [];
         for (const item of cartItems) {
             const p = await product.findOne({ product_id: item.product_id });
