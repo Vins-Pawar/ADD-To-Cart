@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/signup.css">
+    <title>login</title>
+</head>
+
+<body>
+    <main>
+        <div class="heading">
+            <h1>Sign Up</h1>
+        </div>
+        <form action="signup/store" method="post">
+            <div class="login-content">
+                <div class="username">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname" placeholder="Enter Your First Name" autocomplete="">
+                </div>
+                <div class="password">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname" placeholder="Enter Your Last Name" autocomplete="">
+                </div>
+                <div class="password">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Enter Your Username" autocomplete="">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password" autocomplete="">
+                </div>
+                <button type="submit" id="submit-btn">Log In</button>
+                <!-- <input type="submit" value="Login" id="submit-btn"> -->
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

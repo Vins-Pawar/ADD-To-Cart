@@ -1,0 +1,112 @@
+
+@font-face {
+    font-family: Google Sans;
+    src: url(/fonts/GoogleSans-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Google Sans Regular'; */
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: Google Sans;
+    background-color: #fefefe;
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    background-color: #11101b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  0 100px;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: #fefefe;
+}
+
+.hamburger{
+    display: none;
+}
+
+.nav-bar ul{
+    display: flex;
+}
+
+.nav-bar ul li a{
+    /* display: block; */
+    color: #fefefe;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    /* transition: 1s; */
+    transition: 0.5s;
+    margin: 0 5px;
+}
+
+
+.nav-bar ul li a:hover{
+    color: #11101b;
+    background: #fefefe;
+}
+
+@media only screen and (max-width:1320px) {
+    header{
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width:1110px) {
+    header{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width:900px) {
+     .hamburger{
+        display: block;
+        cursor: pointer;
+     }
+
+     .hamburger .line{
+        width: 30px;
+        height: 3px;
+        margin: 6px 0;
+        background: #fefefe;
+     }
+
+     .nav-bar.active{
+        height: 400px;
+     }
+     .nav-bar{
+        height: 0;
+        position: absolute;
+        top: 100px;
+        left: 0; 
+        width: 100%;
+        background: #11101be3;
+        transition: 0.2s;
+     }
+
+     .nav-bar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        line-height: 50px;
+        opacity: 0;
+     }
+     .nav-bar.active ul{
+        opacity: 1;
+     }
+}

@@ -1,0 +1,108 @@
+@font-face {
+    font-family: Google Sans;
+    src: url(../fonts/GoogleSans-Regular.ttf);
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Google Sans;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #56385a;
+    background-image: url(../images/cover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main {
+    height: 450px;
+    width: 400px;
+    background-color: #4a304d;
+    box-shadow: -10px 10px 300px 30px #212121;
+    border: 1.5px solid #7a4e7f;
+}
+
+.heading {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #391245;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.heading h1 {
+    letter-spacing: 3px;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.login-content {
+    height: calc(100% - 100px);
+    width: 100%;
+
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    /* background-color: #BC7FCD; */
+
+}
+
+.username {
+    margin: 50px 50px 15px 50px;
+    font-size: 20px;
+    /* font-weight: 600; */
+    display: flex;
+    flex-direction: column;
+}
+
+.password {
+    margin: 10px 50px 15px 50px;
+    font-size: 20px;
+    /* font-weight: 600; */
+    display: flex;
+    flex-direction: column;
+}
+
+.username input,
+.password input {
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #3c213f;
+    text-decoration: none;
+    border: 0;
+    letter-spacing: 2px;
+    color: white;
+}
+
+#submit-btn {
+    font-family: Google Sans;
+    margin: 15px 50px 50px 50px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 20px;
+    background-color: #ffb37b;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#submit-btn:hover{
+    background-color: #f3a064;
+;
+}
+
+
