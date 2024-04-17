@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/cartstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+        integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">E-Cart</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="" class="active">Sign Up</a>
+                </li>
+                <li>
+                    <a href="/login" class="active">Sign In</a>
+                </li>
+                <li>
+                    <button class="active" id="cartbutton" onclick="toggleCart()">Cart</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="cartItemElements">
+        <div id="cartItems">  
+        </div>
+        <form action="/checkOut">
+            <button id="checkoutbtn">Checkout</button>
+        </form>
+    </div>
+
+    <h1>Product List</h1>
+    <div id="product-list">
+        <% products.forEach(product=> { %>
+            <div class="products">
+                <img src="/images/<%= product.product_image%>" alt="<%= product.product_name %> Image">
+                <h2>
+                    <%= product.product_name %>
+                </h2>
+                <p>Price: <%= product.product_price %> rs
+                </p>
+                <button id="cartbutton" onclick="addToCart('<%= product.product_id %>')">Add To Cart</button>
+            </div>
+            <% }); %>
+    </div>
+    </div>
+
+    <script src="/scripts/navbarscript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scripts/addToCartScript.js"></script>
+</body>
+</html>

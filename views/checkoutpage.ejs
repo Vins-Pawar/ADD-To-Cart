@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Checkout</h1>
+    <table>
+         <tr>
+            <th>
+                Product ID
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Product Price
+            </th>
+         </tr>
+        <% cartItems.forEach(item=> { %>
+            <tr>
+                <td>
+                    <%= item.product_id %>
+                </td>
+                <td>
+                    <%= item.product_name %>
+                </td>
+                <td>
+                    <%= item.product_price %>
+                </td>
+            </t>
+
+            <% }); %>
+    </table>
+</body>
+
+</html>
